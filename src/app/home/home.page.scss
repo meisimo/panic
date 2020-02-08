@@ -1,4 +1,15 @@
 .welcome-card img {
   max-height: 35vh;
   overflow: hidden;
+  text-align: center;
+}
+
+.panic-btn {
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  font-size: 900%;
+  margin-top: 20%;
 }
