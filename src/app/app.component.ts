@@ -18,14 +18,25 @@ export class AppComponent {
     },
     {
       title: 'Usuario',
-      url: '/list',
+      url: '/users',
       icon: 'contact'
     },
     {
       title: 'Ajustes',
       url: '/list',
       icon: 'settings'
+    },
+    {
+      title: 'mapa',
+      url: '/map',
+      icon: 'map'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'Key'
     }
+
   ];
 
   constructor(
