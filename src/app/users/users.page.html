@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>users</ion-title>
+
+    <ion-row>
+      <ion-col >
+        <ion-buttons>
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <ion-title >User</ion-title>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+    </ion-row>
+    <ion-row class="ion-justify-content-center user">
+      <p>User name</p>
+    </ion-row>
 
+    <ion-row class="ion-justify-content-center">
+      <p>Email</p>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <p>Contact List</p>
+    </ion-row>
+    
+    <ion-row class="ion-justify-content-center">
+      <p>emergency list</p>
+    </ion-row>
+    </ion-grid>
 </ion-content>
