@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 })
 export class ListPage implements OnInit {
   private icons = {
-    sonido: {
+    sonido: {  
       title: 'Sonido',
       icon: 'volume-high',
     },
@@ -16,7 +16,7 @@ export class ListPage implements OnInit {
       title: 'Alerta',
       icon: 'notifications',
     },
-    modo_oscuro: {      
+    modo_oscuro: {
       title: 'Modo oscuro ',
       icon: 'contrast',
     }

@@ -1,12 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title style="text-align: center;">Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+ <!-- Parte de login -->
+<div *ngIf="ocultar1==false">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title style="text-align: center;">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 
 
-<ion-content padding>
+<ion-card-content padding >
       <img  src="https://previews.123rf.com/images/tanyastock/tanyastock1803/tanyastock180300490/97923644-user-icon-avatar-login-sign-circle-button-with-soft-color-gradient-background-vector-.jpg">
   <form #form="ngForm" method="post">
 <ion-item>
@@ -17,12 +22,54 @@
 <ion-item>
   <ion-label position="floating">Contraseña</ion-label>
   <ion-input ngModel type="password" name="password"></ion-input>
-</ion-item>  
-<!-- <p style="text-align: right;" href="www.ciencuadras.com"> olvidaste tu contraseña?</p> -->
+</ion-item>   
+
 <a href="https://www.w3schools.com/html/">Olvidaste tu contraseña?</a> 
 <ion-button type="submit" expand="full" color="primary">Acceder</ion-button>
 </form>
 <p text-center>No tienes cuenta registrate!!</p>
-<ion-button expand="full" color="danger" >Registrarse</ion-button>
+  <ion-button expand="full" color="danger" (click)="accion1()">Registrarse</ion-button>
+</ion-card-content> 
+</div>
 
-</ion-content>
+
+<!-- Parte de Registro -->
+<div *ngIf="ocultar1">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title style="text-align: center;">Registro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-card-content >
+<ion-item>
+      <ion-label position="floating">Primer Nombre</ion-label>
+      <ion-input ngModel name="fName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating">Segundo Nombre</ion-label>
+      <ion-input ngModel name="lName"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" ngModel name="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="full" color="danger">Registrate</ion-button>
+    <p text-center>ya tienes cuenta accede </p>
+    <ion-button type="submit" expand="full" color="primary" (click)="accion2()">Acceder</ion-button>
+  </ion-card-content>
+</div>
