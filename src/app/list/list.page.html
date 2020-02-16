@@ -12,16 +12,16 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let icono of icons">
-      <ion-icon [name]="icono.icon" slot="start"></ion-icon>
+    <ion-item *ngFor="let icono of icons | keyvalue">
+      <ion-icon [name]="icono.value.icon" slot="start"></ion-icon>
       <ion-label>
-        {{icono.title}}
+        {{icono.value.title}}
       </ion-label>
       <div class="item-note" slot="end">
         <ion-toggle 
-          [(ngModel)]="icono.estado"
+          [(ngModel)]="icono.value.estado"
           color="primary"
-          (ionChange)="optionChange()">
+          (ionChange)="optionChange(icono.key)">
         </ion-toggle>
       </div>
     </ion-item>
