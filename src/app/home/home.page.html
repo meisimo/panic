@@ -12,8 +12,8 @@
   <ion-grid class="table">
     <ion-card>
       <ion-card-content>
-        <ion-col *ngFor="let icon of infoIcon">
-          <ion-icon [name]="icon.icon" color="medium" class="info-icon">
+        <ion-col *ngFor="let icon of infoIcon | keyvalue">
+          <ion-icon [name]="icon.value.icon" color="medium" class="info-icon">
           </ion-icon>
         </ion-col>
       </ion-card-content>
