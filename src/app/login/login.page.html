@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title style="text-align: center;">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+
+<ion-content padding>
+      <img  src="https://previews.123rf.com/images/tanyastock/tanyastock1803/tanyastock180300490/97923644-user-icon-avatar-login-sign-circle-button-with-soft-color-gradient-background-vector-.jpg">
+  <form #form="ngForm" method="post">
+<ion-item>
+  <ion-label position="floating">Email</ion-label>
+  <ion-input ngModel type="email" name="email"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Contraseña</ion-label>
+  <ion-input ngModel type="password" name="password"></ion-input>
+</ion-item>  
+<!-- <p style="text-align: right;" href="www.ciencuadras.com"> olvidaste tu contraseña?</p> -->
+<a href="https://www.w3schools.com/html/">Olvidaste tu contraseña?</a> 
+<ion-button type="submit" expand="full" color="primary">Acceder</ion-button>
+</form>
+<p text-center>No tienes cuenta registrate!!</p>
+<ion-button expand="full" color="danger" >Registrarse</ion-button>
 
 </ion-content>
