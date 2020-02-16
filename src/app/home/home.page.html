@@ -9,22 +9,22 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-grid class="table">
-      <ion-row >
-        <ion-col col-4 >          
-          <ion-icon name="locate" style="zoom:2.0;"></ion-icon>          
+  <ion-grid class="table">
+    <ion-card>
+      <ion-card-content>
+        <ion-col *ngFor="let icon of infoIcon">
+          <ion-icon [name]="icon.icon" color="medium" class="info-icon">
+          </ion-icon>
         </ion-col>
-        <ion-col col-4>         
-          <ion-icon name="eye" style="zoom:2.0;"></ion-icon>          
-        </ion-col>
-        <ion-col col-4>         
-          <ion-icon name="volume-mute" style="zoom:2.0;"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-button color="danger" class="sm panic-btn">
+      <ion-button 
+        (click)="muestraMensageMandado()"
+        color="danger"
+        class="sm panic-btn">
         !
       </ion-button>
     </ion-row>
