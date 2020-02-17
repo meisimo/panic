@@ -11,7 +11,7 @@ declare var google;
 })
 export class MapPage implements OnInit {
 
-  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('map', null) mapElement: ElementRef;
 
   map: any;
   mapInitialised: boolean = false;

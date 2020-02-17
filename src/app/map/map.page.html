@@ -5,5 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <div #map id="map"></div> 
+  <div #map id="map"></div>
+  <div *ngIf="false;else no_alerts">
+    <ion-button color="success" expand="block">Aceptar</ion-button>
+    <ion-button color="danger " expand="block">Cancelar</ion-button>
+  </div>
+  <ng-template #no_alerts>  
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-title>Todo en orden</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        No hay alertas cerca de ti, puedes estar tranquilo.
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
 </ion-content>
