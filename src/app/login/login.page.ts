@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ export class LoginPage implements OnInit {
 
   ocultar1: boolean    = false;
 
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   accion1() {
      this.ocultar1 = true;
@@ -20,6 +21,10 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  log(){
+    this.storage.set('logged', 1 )
   }
 
 }
