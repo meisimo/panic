@@ -24,10 +24,8 @@
   <ion-input ngModel type="password" name="password"></ion-input>
 </ion-item>   
 
-<a href="https://www.w3schools.com/html/">Olvidaste tu contraseña?</a> 
-<ion-button type="submit" expand="full" color="primary">Acceder</ion-button>
 </form>
-<p text-center>No tienes cuenta registrate!!</p>
+  <ion-button href="http://localhost:8100/home" type="submit" expand="full" color="primary">Acceder</ion-button>
   <ion-button expand="full" color="danger" (click)="accion1()">Registrarse</ion-button>
 </ion-card-content> 
 </div>
@@ -68,8 +66,6 @@
       <ion-label position="floating">Confirmar Contraseña</ion-label>
       <ion-input type="password" ngModel name="password"></ion-input>
     </ion-item>
-    <ion-button type="submit" expand="full" color="danger">Registrate</ion-button>
-    <p text-center>ya tienes cuenta accede </p>
-    <ion-button type="submit" expand="full" color="primary" (click)="accion2()">Acceder</ion-button>
+    <ion-button href="http://localhost:8100/home" type="submit" expand="full" color="danger">Registrate</ion-button>
   </ion-card-content>
 </div>
