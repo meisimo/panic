@@ -16,10 +16,15 @@ export class MapPage implements OnInit {
   map: any;
   mapInitialised: boolean = false;
   apiKey: any;
-
+  num: number;
 
   constructor(public navCtrl: NavController) {
     this.loadGoogleMaps();
+    this.num = Math.random();
+  }
+
+  randomizeAlert(){
+    return this.num > 0.5;
   }
 
   ngOnInit() {
@@ -31,7 +36,6 @@ export class MapPage implements OnInit {
       window['mapInit'] = () => {
         this.initMap();
         console.log("LOADING...");
-        
       }
 
       let script = document.createElement("script");
@@ -54,14 +58,11 @@ export class MapPage implements OnInit {
 
   }
 
-  initMap() {
-
+  async initMap() {
     this.mapInitialised = true;
-
-    Geolocation.getCurrentPosition().then((position) => {
-
+    try {
+      let position = await Geolocation.getCurrentPosition();
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
       let mapOptions = {
         center: latLng,
         zoom: 15,
@@ -70,7 +71,9 @@ export class MapPage implements OnInit {
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-    });
+    } catch (err) {
+      console.error("Map couldnt be loaded");
+    }
 
   }
 }

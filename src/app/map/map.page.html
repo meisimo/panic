@@ -11,7 +11,7 @@
 
 <ion-content>
   <div #map id="map"></div>
-  <div *ngIf="false;else no_alerts">
+  <div *ngIf="randomizeAlert();else no_alerts">
     <ion-button color="success" expand="block">Aceptar</ion-button>
     <ion-button color="danger " expand="block">Cancelar</ion-button>
   </div>
