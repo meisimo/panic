@@ -1,19 +1,9 @@
 <ion-header>
   <ion-toolbar>
-
-    <ion-row>
-      <ion-col >
-        <ion-buttons>
-          <ion-back-button defaultHref="/"></ion-back-button>
-          <ion-title >User</ion-title>
-        </ion-buttons>
-      </ion-col>
-      <ion-col>
-        
-      </ion-col>
-      <ion-col>
-      </ion-col>
-    </ion-row>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> user </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -37,16 +27,33 @@
     </ion-row>
 
     <ion-row class="ion-justify-content-center">
-      <ion-item>
-        Contact List  <ion-icon name="arrow-down"></ion-icon>
-      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label>Contact list</ion-label>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+            <ion-select-option >Contacto1</ion-select-option>
+            <ion-select-option >Contacto2</ion-select-option>
+            <ion-select-option >Contacto3</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     </ion-row>
-    
+
     <ion-row class="ion-justify-content-center">
-      <ion-item>
-        Emergency list
-        <ion-icon name="arrow-down"></ion-icon>
-      </ion-item>
+      <ion-list>
+        <ion-item>
+          <ion-label>Emergency list</ion-label>
+          <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+            <ion-select-option >Policia</ion-select-option>
+            <ion-select-option >911</ion-select-option>
+            <ion-select-option >Sijin</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-button href="http://localhost:8100/home" class="logOut" expand="full" color="danger">Log out</ion-button>
     </ion-row>
 
     <ion-row class="ion-justify-content-center panicLetrero">
