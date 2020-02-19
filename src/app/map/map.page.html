@@ -10,12 +10,14 @@
 </ion-header>
 
 <ion-content>
-  <div #map id="map"></div>
-  <div *ngIf="randomizeAlert();else no_alerts">
-    <ion-button color="success" expand="block">Aceptar</ion-button>
-    <ion-button color="danger " expand="block">Cancelar</ion-button>
+  <div #map id="map">
+    Aquí vá el mapa
   </div>
-  <ng-template #no_alerts>  
+  <div *ngIf="randomizeAlert();else no_alerts">
+    <ion-button color="success" (click)="mensageAlerta('aceptada')" expand="block">Aceptar</ion-button>
+    <ion-button color="danger " (click)="mensageAlerta('rechazada')" expand="block">Cancelar</ion-button>
+  </div>
+  <ng-template #no_alerts>
     <ion-card color="light">
       <ion-card-header>
         <ion-card-title>Todo en orden</ion-card-title>

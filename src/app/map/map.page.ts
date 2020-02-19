@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { NavController } from '@ionic/angular';
+
+import { NavController, AlertController } from '@ionic/angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
@@ -18,7 +19,10 @@ export class MapPage implements OnInit {
   apiKey: any;
   num: number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public alertController: AlertController,
+    ) {
     this.loadGoogleMaps();
     this.num = Math.random();
   }
@@ -73,7 +77,26 @@ export class MapPage implements OnInit {
 
     } catch (err) {
       console.error("Map couldnt be loaded");
+      this.errorCargandoMapa()
     }
 
+  }
+
+  async mensageAlerta(mensage){
+    const alert = await this.alertController.create({
+      header: 'Señal enviada',
+      message: `Emergencia ${mensage}!<br>Gracias por no ignorarnos :)`,
+      buttons: ['Aceptar']
+    })
+    await alert.present()
+  }
+
+  async errorCargandoMapa(){
+    const alert = await this.alertController.create({
+      header: 'Algo no ha salido bien',
+      message: `El mapa no se logró cargar. Hay problemas con la geolocalización :(`,
+      buttons: ['Aceptar']
+    })
+    await alert.present()
   }
 }
